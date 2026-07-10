@@ -1,0 +1,302 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+:root[data-bs-theme='light'] {
+  --main-bg: oklch(0.985 0.004 255);
+  --main-border-color: oklch(0.92 0.006 255);
+  --text-color: oklch(0.3 0.02 255);
+  --text-muted-color: oklch(0.47 0.015 252);
+  --heading-color: oklch(0.22 0.03 255);
+  --label-color: oklch(0.4 0.018 252);
+  --link-color: oklch(0.69 0.23 43);
+  --link-underline-color: oklch(0.87 0.09 43);
+  --card-bg: oklch(0.995 0.002 255);
+  --card-hover-bg: oklch(0.965 0.008 253);
+  --sidebar-bg: oklch(0.28 0.03 252);
+  --sidebar-border-color: oklch(0.36 0.03 252);
+  --sidebar-muted-color: oklch(0.86 0.018 252);
+  --sidebar-active-color: oklch(0.98 0.01 250);
+  --sidebar-hover-bg: oklch(0.36 0.04 252 / 0.85);
+  --sidebar-btn-bg: oklch(0.36 0.03 252);
+  --sidebar-btn-color: oklch(0.92 0.015 252);
+  --site-title-color: oklch(0.96 0.01 250);
+  --site-subtitle-color: oklch(0.82 0.015 252);
+  --topbar-bg: oklch(0.985 0.004 255 / 0.82);
+  --post-list-text-color: oklch(0.36 0.016 255);
+  --inline-code-bg: oklch(0.95 0.014 252);
+  --code-color: oklch(0.3 0.02 260);
+  --blockquote-border-color: oklch(0.87 0.09 43);
+  --blockquote-text-color: oklch(0.4 0.015 252);
+  --tb-odd-bg: oklch(0.98 0.005 250);
+  --tb-border-color: oklch(0.91 0.008 250);
+  --toc-highlight: oklch(0.66 0.23 43);
+  --btn-share-hover-color: oklch(0.66 0.23 43);
+  --checkbox-checked-color: oklch(0.66 0.23 43);
+  --focus-ring-color: oklch(0.72 0.17 50 / 0.45);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.btn:focus-visible,
+#sidebar .nav-link:focus-visible,
+#mode-toggle:focus-visible,
+#copy-link:focus-visible {
+  outline: 2px solid var(--focus-ring-color);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+#sidebar {
+  background: linear-gradient(180deg, oklch(0.31 0.03 252) 0%, oklch(0.24 0.03 252) 100%);
+}
+
+#avatar {
+  overflow: hidden;
+}
+
+#avatar img,
+#avatar:hover img,
+#avatar:focus-visible img {
+  transform: none !important;
+}
+
+#sidebar .nav-link:hover,
+#sidebar .nav-link:focus-visible {
+  color: oklch(0.9 0.05 52);
+}
+
+#sidebar .nav-link.active {
+  color: oklch(0.92 0.065 50);
+  background: oklch(0.38 0.05 252 / 0.9);
+  border-radius: 10px;
+}
+
+#sidebar .site-title {
+  position: relative;
+  color: var(--site-title-color);
+}
+
+#sidebar .site-title::after {
+  content: '';
+  display: block;
+  width: 2.2rem;
+  height: 2px;
+  margin-top: 0.42rem;
+  border-radius: 999px;
+  background: oklch(0.78 0.16 52);
+  opacity: 0.72;
+  transition: width 180ms ease-out, opacity 180ms ease-out;
+}
+
+#sidebar .site-title:hover,
+#sidebar .site-title:focus-visible {
+  color: oklch(0.97 0.01 250);
+}
+
+#sidebar .site-title:hover::after,
+#sidebar .site-title:focus-visible::after {
+  width: 3.1rem;
+  opacity: 1;
+}
+
+#sidebar .nav-link,
+#sidebar .site-title,
+#sidebar .sidebar-bottom > a,
+#sidebar #mode-toggle {
+  transition: color 180ms ease-out, background-color 180ms ease-out;
+}
+
+#sidebar .nav-link {
+  border-radius: 10px;
+}
+
+.content {
+  background: linear-gradient(180deg, oklch(0.99 0.003 255) 0%, oklch(0.975 0.008 252) 100%);
+}
+
+.post,
+.post-content {
+  color: var(--text-color);
+}
+
+.post-content {
+  max-width: 72ch;
+  margin-inline: auto;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+
+.post-content > * + * {
+  margin-top: clamp(0.95rem, 1.3vw, 1.35rem);
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  color: var(--heading-color);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin-top: clamp(1.8rem, 3.2vw, 2.8rem);
+  margin-bottom: 0.7rem;
+}
+
+.post-content h2 {
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid oklch(0.9 0.01 252);
+}
+
+.post-content p,
+.post-content li {
+  color: var(--text-color);
+}
+
+.post-content a {
+  color: var(--link-color);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.15em;
+  transition: color 180ms ease-out, text-decoration-color 180ms ease-out;
+}
+
+.post-content a:hover {
+  color: oklch(0.6 0.25 43);
+  text-decoration-color: currentcolor;
+}
+
+.post-content blockquote {
+  margin: 1.4rem 0;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid oklch(0.87 0.09 43);
+  border-radius: 12px;
+  background: oklch(0.965 0.02 55);
+}
+
+.post-content img,
+.post-content .preview-img {
+  border-radius: 14px;
+}
+
+.post-content code {
+  border-radius: 6px;
+  padding: 0.1em 0.4em;
+}
+
+.post-content pre {
+  border-radius: 12px;
+  border: 1px solid oklch(0.9 0.01 252);
+}
+
+.post-content table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--tb-border-color);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.post-content th,
+.post-content td {
+  padding: 0.65rem 0.8rem;
+}
+
+.post-meta,
+.post-tail-wrapper,
+.post-navigation {
+  color: var(--text-muted-color);
+}
+
+#panel-wrapper {
+  font-size: 0.94rem;
+}
+
+#panel-wrapper .panel-heading {
+  color: var(--label-color);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+#panel-wrapper .access > section,
+#toc-wrapper {
+  border: 1px solid oklch(0.9 0.008 250);
+  border-radius: 12px;
+  background: oklch(0.99 0.003 252);
+  padding: 0.9rem 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+#panel-wrapper .post-tag.btn,
+#search-hints .post-tag.btn {
+  border-radius: 999px;
+}
+
+.share-wrapper {
+  gap: 0.45rem;
+}
+
+.share-wrapper .share-label {
+  color: var(--label-color);
+}
+
+.post-navigation .btn.disabled {
+  opacity: 1;
+  border-color: oklch(0.9 0.01 252);
+  background: oklch(0.98 0.004 252);
+  color: var(--text-muted-color);
+}
+
+.post-navigation .btn.disabled p {
+  margin-bottom: 0;
+  font-size: 0;
+  line-height: 1;
+}
+
+.post-navigation .btn.disabled[aria-label='Older'] p::before {
+  content: 'No older post yet';
+  font-size: 0.82rem;
+}
+
+.post-navigation .btn.disabled[aria-label='Newer'] p::before {
+  content: 'No newer post yet';
+  font-size: 0.82rem;
+}
+
+@media (max-width: 1200px) {
+  #panel-wrapper .access > section,
+  #toc-wrapper {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 0.35rem;
+    background: transparent;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-content {
+    font-size: 1rem;
+    line-height: 1.78;
+  }
+
+  .post-content h1,
+  .post-content h2,
+  .post-content h3 {
+    line-height: 1.25;
+  }
+}
