@@ -61,7 +61,11 @@ input:focus-visible,
 }
 
 #sidebar {
-  background: linear-gradient(180deg, oklch(0.31 0.03 252) 0%, oklch(0.24 0.03 252) 100%);
+  background: linear-gradient(
+    180deg,
+    oklch(0.31 0.03 252) 0%,
+    oklch(0.24 0.03 252) 100%
+  );
 }
 
 #avatar {
@@ -99,7 +103,9 @@ input:focus-visible,
   border-radius: 999px;
   background: oklch(0.78 0.16 52);
   opacity: 0.72;
-  transition: width 180ms ease-out, opacity 180ms ease-out;
+  transition:
+    width 180ms ease-out,
+    opacity 180ms ease-out;
 }
 
 #sidebar .site-title:hover,
@@ -117,7 +123,9 @@ input:focus-visible,
 #sidebar .site-title,
 #sidebar .sidebar-bottom > a,
 #sidebar #mode-toggle {
-  transition: color 180ms ease-out, background-color 180ms ease-out;
+  transition:
+    color 180ms ease-out,
+    background-color 180ms ease-out;
 }
 
 #sidebar .nav-link {
@@ -125,7 +133,11 @@ input:focus-visible,
 }
 
 .content {
-  background: linear-gradient(180deg, oklch(0.99 0.003 255) 0%, oklch(0.975 0.008 252) 100%);
+  background: linear-gradient(
+    180deg,
+    oklch(0.99 0.003 255) 0%,
+    oklch(0.975 0.008 252) 100%
+  );
 }
 
 .post,
@@ -171,7 +183,9 @@ input:focus-visible,
   color: var(--link-color);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.15em;
-  transition: color 180ms ease-out, text-decoration-color 180ms ease-out;
+  transition:
+    color 180ms ease-out,
+    text-decoration-color 180ms ease-out;
 }
 
 .post-content a:hover {
